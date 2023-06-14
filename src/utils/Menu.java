@@ -9,7 +9,6 @@ import static connexion.Conexionbd.*;
      */
 public class Menu {
     static Scanner sc = new Scanner(System.in);
-    //menu que muestre en primer lugar la busqueda de dueños, mascotas y empleado, en segundo lugar que el empleado pueda ver una cita y elegir si cortgarle el pelo o bañarlo
 
     /**
      * Método que muestra el menú principal y permite al usuario seleccionar una opción.
