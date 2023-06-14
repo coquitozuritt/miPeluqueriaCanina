@@ -68,7 +68,7 @@ public class Conexionbd {
     public static void buscarDueno() {
         conectar();
         System.out.println("Introduce el telefono del dueño");
-        String telefono = sc.nextLine();
+        int telefono = Integer.parseInt(sc.nextLine());
         try {
 
             Statement st = conexion.createStatement();
@@ -76,7 +76,7 @@ public class Conexionbd {
             ResultSet rs = st.executeQuery(sql);
 
             while (rs.next()) {
-                System.out.println("Nombre: " + rs.getString("nombre") + " Telefono: " + rs.getString("telefono"));
+                System.out.println("Nombre: " + rs.getString("nombre") + " Telefono: " + rs.getInt("telefono"));
             }
             st.close();
         } catch (SQLException e) {
@@ -93,7 +93,7 @@ public class Conexionbd {
     public static void buscarEmpleado() {
         conectar();
         System.out.println("Introduce el telefono del empleado");
-        String telefono = sc.nextLine();
+        int telefono = Integer.parseInt(sc.nextLine());
         try {
 
             Statement st = conexion.createStatement();
@@ -101,7 +101,7 @@ public class Conexionbd {
             ResultSet rs = st.executeQuery(sql);
 
             while (rs.next()) {
-                System.out.println("Nombre: " + rs.getString("nombre") + " Telefono: " + rs.getString("telefono"));
+                System.out.println("Nombre: " + rs.getString("nombre") + " Telefono: " + rs.getInt("telefono"));
             }
             st.close();
         } catch (SQLException e) {
@@ -175,7 +175,7 @@ public class Conexionbd {
         System.out.println("Introduce el nombre del dueño");
         String nombre = sc.nextLine();
         System.out.println("Introduce el telefono del dueño");
-        String telefono = sc.nextLine();
+        int telefono = sc.nextInt();
         System.out.println("Introduce el nombre de la mascota");
         String mascota = sc.nextLine();
         System.out.println("Introduce la raza de la mascota");
@@ -218,7 +218,7 @@ public class Conexionbd {
         System.out.println("Introduce el nombre del empleado");
         String nombre = sc.nextLine();
         System.out.println("Introduce el telefono del empleado");
-        String telefono = sc.nextLine();
+        int telefono = Integer.parseInt(sc.nextLine());
 
         try {
 
@@ -245,7 +245,7 @@ public class Conexionbd {
         conectar();
 
         System.out.println("Introduce el telefono del dueño");
-        String telefono = sc.nextLine();
+        int telefono = Integer.parseInt(sc.nextLine());
 
         try {
             Statement st = conexion.createStatement();
@@ -274,7 +274,7 @@ public class Conexionbd {
                     System.out.println("Nombre del dueño editado exitosamente.");
                 } else if (opcion == 2) {
                     System.out.println("Introduce el nuevo telefono del dueño");
-                    String nuevoTelefono = sc.nextLine();
+                    int nuevoTelefono = Integer.parseInt(sc.nextLine());
 
                     // Actualizar el telefono del dueño
                     String sql3 = "UPDATE dueño SET telefono = '" + nuevoTelefono + "' WHERE telefono = '" + telefono + "'";
@@ -302,7 +302,7 @@ public class Conexionbd {
         conectar();
 
         System.out.println("Introduce el telefono del empleado");
-        String telefono = sc.nextLine();
+        int telefono = Integer.parseInt(sc.nextLine());
 
         try{
             Statement st = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
@@ -331,7 +331,7 @@ public class Conexionbd {
                     System.out.println("Nombre del empleado editado exitosamente.");
                 } else if (opcion == 2) {
                     System.out.println("Introduce el nuevo telefono del empleado");
-                    String nuevoTelefono = sc.nextLine();
+                    int nuevoTelefono = Integer.parseInt(sc.nextLine());
 
                     // Actualizar el telefono del empleado
                     String sql3 = "UPDATE empleado SET telefono = '" + nuevoTelefono + "' WHERE telefono = '" + telefono + "'";
@@ -361,7 +361,7 @@ public class Conexionbd {
         try{
 
         System.out.println("Introduce el telefono del empleado");
-        String telefono = sc.nextLine();
+        int telefono = Integer.parseInt(sc.nextLine());
         //borrar un empleado pidiendole el telefono
         Statement st = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 
@@ -385,7 +385,7 @@ public class Conexionbd {
 
         try{
             System.out.println("Introduce el telefono del dueño");
-            String telefono = sc.nextLine();
+            int telefono = Integer.parseInt(sc.nextLine());
             //borrar un dueño pidiendole el telefono
             Statement st = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 
