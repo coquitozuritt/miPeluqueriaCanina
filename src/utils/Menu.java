@@ -4,10 +4,16 @@ import java.util.Scanner;
 
 import static connexion.Conexionbd.*;
 
+    /**
+     * Clase que representa un menú con diferentes opciones y submenús.
+     */
 public class Menu {
     static Scanner sc = new Scanner(System.in);
     //menu que muestre en primer lugar la busqueda de dueños, mascotas y empleado, en segundo lugar que el empleado pueda ver una cita y elegir si cortgarle el pelo o bañarlo
 
+    /**
+     * Método que muestra el menú principal y permite al usuario seleccionar una opción.
+     */
     public static void menuPrincipal() {
         int opcion;
         do {
@@ -48,9 +54,9 @@ public class Menu {
         sc.close();
     }
 
-
-
-    //submenu buscar empleado, dueno o mascota
+    /**
+     * Método que muestra el menú de búsqueda y permite al usuario seleccionar una opción.
+     */
     public static void menuBuscar() {
         //darle funcionalidad con un switch
         int opcion2;
@@ -82,9 +88,9 @@ public class Menu {
         sc.close();
     }
 
-
-    //submenu panel empleado
-
+    /**
+     * Método que muestra el menú de administración de citas y permite al usuario seleccionar una opción.
+     */
     public static void menuPanelEmpleado() {
         int opcion3;
         do {
@@ -108,8 +114,9 @@ public class Menu {
     }
 
 
-    //submenu administrar usuarios: empleado y dueno
-
+    /**
+     * Método que muestra el menú de administración de usuarios y permite al usuario seleccionar una opción.
+     */
     public static void menuAdministrarUsuarios() {
         int opcion4;
         do {
@@ -137,8 +144,9 @@ public class Menu {
         sc.close();
     }
 
-    //submenu administrar empleados
-
+    /**
+     * Método que muestra el menú de administración de empleados y permite al usuario seleccionar una opción.
+     */
     public static void menuAdministrarEmpleados() {
         int opcion5;
         do {
@@ -170,8 +178,9 @@ public class Menu {
         sc.close();
     }
 
-        //submenu administrar duenos
-
+        /**
+         * Método que muestra el menú de administración de dueños y permite al usuario seleccionar una opción.
+         */
         public static void menuAdministrarDuenos () {
             int opcion6;
             do {
@@ -197,11 +206,9 @@ public class Menu {
                     default:
                         System.out.println("Opcion incorrecta");
                         break;
-
                 }
             } while (opcion6 != 4);
             sc.close();
         }
 
 }
-

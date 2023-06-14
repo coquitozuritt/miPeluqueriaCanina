@@ -5,12 +5,24 @@ import java.util.Scanner;
 
 public class Conexionbd {
 
-
+    /**
+     * Scanner para leer datos de la consola.
+     */
     static Scanner sc = new Scanner(System.in);
 
+    /**
+     * Conexión con la base de datos.
+     */
     static private Connection conexion;
 
+    /**
+     * Método principal.
+     *
+     */
     public static void conectar() {
+        /**
+        * Conexión con la base de datos.
+        */
         try {
             String basedatos = "mipelu";
             String host = "localhost";
@@ -23,12 +35,23 @@ public class Conexionbd {
             conexion = DriverManager.getConnection(urlConnection, user, pwd);
 
             conexion.setAutoCommit(true);
+            /**
+             * Si no se ha producido ningún error, se muestra un mensaje indicando que la
+             */
+            System.out.println("Conexión establecida con la base de datos ");
         } catch (SQLException e) {
+            /**
+             * Se muestra un mensaje de error indicando que no se ha podido establecer la
+             * conexión con la base de datos.
+             */
             System.out.println("Error al conectar con la base de datos");
             e.printStackTrace();
         }
     }
 
+    /**
+     * Método que cierra la conexión con la base de datos.
+     */
     public static void desconectar() {
         try {
             conexion.close();
@@ -39,7 +62,9 @@ public class Conexionbd {
     }
 
     //buscar dueno  por telefono
-
+    /**
+     * Método que permite buscar un dueño por su teléfono.
+     */
     public static void buscarDueno() {
         conectar();
         System.out.println("Introduce el telefono del dueño");
@@ -62,7 +87,9 @@ public class Conexionbd {
 
 
     //buscar empleado por telefono
-
+    /**
+     * Método que permite buscar un empleado por su teléfono.
+     */
     public static void buscarEmpleado() {
         conectar();
         System.out.println("Introduce el telefono del empleado");
@@ -84,7 +111,9 @@ public class Conexionbd {
     }
 
     //buscar mascota por nombre y por nombre del dueño
-
+    /**
+     * Método que permite buscar una mascota por su nombre y el nombre de su dueño.
+     */
     public static void buscarMascota(){
         conectar();
 
@@ -113,7 +142,9 @@ public class Conexionbd {
 
 
     //ver citas por id, fecha, dueño_id, mascota_id, empleado_id
-
+    /**
+     * Método que permite ver las citas por su id, fecha, dueño_id, mascota_id y empleado_id.
+     */
     public static void verCitas() {
         conectar();
         System.out.println("Introduce el id de la cita");
@@ -135,6 +166,9 @@ public class Conexionbd {
     }
 
     // crear dueno con id, nombre y telefono y el nombre de la mascota
+    /**
+     * Método que permite crear un dueño con su id, nombre, telefono y crear su propia mascota.
+     */
     public static void crearDueno() {
         conectar();
 
@@ -175,7 +209,9 @@ public class Conexionbd {
     }
 
     //crear empleado con nombre y telefono
-
+    /**
+     * Método que permite crear un empleado con su nombre y telefono.
+     */
     public static void crearEmpleado() {
         conectar();
 
@@ -202,7 +238,9 @@ public class Conexionbd {
 
 
     // editar dueño por telefono
-
+    /**
+     * Método que permite editar un dueño por su telefono.
+     */
     public static void editarDueno() {
         conectar();
 
@@ -257,7 +295,9 @@ public class Conexionbd {
     }
 
     //editar empleado por telefono
-
+    /**
+     * Método que permite editar un empleado por su telefono.
+     */
     public static void editarEmpleado(){
         conectar();
 
@@ -265,7 +305,6 @@ public class Conexionbd {
         String telefono = sc.nextLine();
 
         try{
-
             Statement st = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 
             // Verificar si el empleado existe en la base de datos
@@ -313,7 +352,9 @@ public class Conexionbd {
     }
 
     //borrar un empleado pidiendole el telefono
-
+    /**
+     * Método que permite borrar un empleado pidiendole el telefono.
+     */
     public static void borrarEmpleado() {
         conectar();
 
@@ -336,7 +377,9 @@ public class Conexionbd {
     }
 
     //borrar dueño pidiendole el telefono
-
+    /**
+     * Método que permite borrar un dueño pidiendole el telefono.
+     */
     public static void borrarDueno(){
         conectar();
 
@@ -358,7 +401,9 @@ public class Conexionbd {
     }
 
     // consultar citas por el empleado , telefono del dueño y nombre de la mascota
-
+    /**
+     * Método que permite consultar citas por el empleado , telefono del dueño y nombre de la mascota.
+     */
     public static void adminCitas() {
         conectar();
 
@@ -452,6 +497,10 @@ public class Conexionbd {
 
     }
 
+    /**
+     * Método que permite modificar una cita.
+     * @param idCita ID de la cita a modificar
+     */
     public static void modificarCita(int idCita) {
         conectar();
 
@@ -477,6 +526,10 @@ public class Conexionbd {
         }
     }
 
+    /**
+     * Método que permite ver los detalles de una cita.
+     * @param idCita ID de la cita a mostrar
+     */
     public static void verDetallesCita(int idCita) {
         conectar();
 
@@ -516,7 +569,10 @@ public class Conexionbd {
         }
     }
 
-
+    /**
+     * Método que permite borrar una cita.
+     * @param idCita ID de la cita a borrar
+     */
     public static void borrarCita(int idCita) {
         conectar();
 
@@ -537,7 +593,9 @@ public class Conexionbd {
     }
 
     // añadir cita
-
+    /**
+     * Método que permite añadir una cita.
+     */
     public static void anadirCita() {
         conectar();
 
@@ -627,7 +685,3 @@ public class Conexionbd {
 
 }
     }}
-
-
-
-
