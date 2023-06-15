@@ -1,0 +1,6 @@
+jun 16, 2023 1:15:09 A. M. connexion.Conexionbd conectar
+INFO: Conexión establecida con la base de datos
+jun 16, 2023 1:23:07 A. M. connexion.Conexionbd conectar
+INFO: Conexión establecida con la base de datos
+jun 16, 2023 1:23:11 A. M. connexion.Conexionbd buscarEmpleado
+INFO: Consulta de búsqueda de empleado por teléfono
