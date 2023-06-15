@@ -684,4 +684,7 @@ public class Conexionbd {
             System.out.println("Error al agregar la cita");
 
 }
-    }}
+    }
+
+
+}

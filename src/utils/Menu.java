@@ -3,8 +3,9 @@ package utils;
 import java.util.Scanner;
 
 import static connexion.Conexionbd.*;
+import static interfaces.LlamarCliente.llamarCliente;
 
-    /**
+/**
      * Clase que representa un menú con diferentes opciones y submenús.
      */
 public class Menu {
@@ -25,7 +26,9 @@ public class Menu {
             System.out.println("3. Administrar citas: ");
             //salir
             System.out.println("4. Añadir citas: ");
-            System.out.println("5. Salir: ");
+            //llamar al cliente
+            System.out.println("5. LLamar cliente: ");
+            System.out.println("6. Salir: ");
             opcion = sc.nextInt();
 
             switch (opcion) {
@@ -42,6 +45,12 @@ public class Menu {
                     anadirCita();
                     break;
                 case 5:
+                    System.out.println("Llamar cliente");
+                    System.out.println("Dame el numero de telefono del cliente:");
+                    int numeroCliente = sc.nextInt();
+                    llamarCliente(numeroCliente);
+                    break;
+                case 6:
                     System.out.println("Salir");
                     break;
                 default:
